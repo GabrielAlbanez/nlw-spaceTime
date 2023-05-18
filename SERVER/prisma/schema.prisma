@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+//comandos do prisma @id falar que isso é um id
+//modl comando para se criar uma tabela
+// @defalu ou seja como valor padrão
+// e essa function uiuid server para gerar um valor de id unico e universal 
+
+model user {
+  id   String @id @default(uuid())
+  name String
+}
